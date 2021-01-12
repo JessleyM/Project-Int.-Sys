@@ -1,0 +1,27 @@
+"""
+playing safe algorithm
+
+The bot will try to play as safe as possible and keep the difference
+between points (between players) as low as possible, 
+till it reaches the end game 
+
+It uses a greedy algo, because it chooses the best outcome of this turn, 
+without taking into account, the rest of the game
+"""
+
+#########################################################################################
+# different phases
+
+# first phase
+if bot is first to choose a card:
+	# ???
+
+if the bot chooses a card second:
+    # 
+	for each card in hand:
+		calculate outcome if card is chosen.
+		calculate difference in points between players if card is chosen.
+	choose card which has the lowest point difference as a result 
+
+# during end game
+???
