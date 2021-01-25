@@ -1,7 +1,10 @@
 """
 Description:
-first phase: play cheapest card available. don't use marriage cards(king and queen) if possible
-2nd phase: play most expensive card available and marriages
+Adjusted version of cheap_exp. 
+cheap_exp_mar takes marriages into account and tries to avoid using kings and queens 
+until the 2nd phase, to increase the chance to play marriages.
+phase1: play cheapest card available, besides marriage cards (king and queen) if possible.
+2nd phase: play most expensive card available and marriages.
 """
 
 # Import the API objects
@@ -35,9 +38,8 @@ class Bot:
 
         # play cheapest card in phase 1
         if state.get_phase() == 1:
-            # sort marriage cards and non_marriage cards
+            # divides hand in marriage cards and non_marriage cards
             for index, move in enumerate(moves):
-                # if card is king or queen
                 if move[0] is not None and move[0] % 5 == 2 or move[0] is not None and move[0] % 5 == 3:
                     marriage_cards.append(move)
                 else:
