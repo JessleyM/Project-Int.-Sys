@@ -1,5 +1,8 @@
 """
-Description: expensive bot will always play the most expensive card.
+Description: 
+expensive_mar bot will always play the most expensive card
+but in phase1, it tries to avoid using marriage cards(king and queen)
+This way, there is a higher chance it will perform marriages in phase 2.
 """
 
 # Import the API objects
@@ -41,21 +44,21 @@ class Bot:
                 else:
                     non_marriage_cards.append(move)
 
-            # play cheapest non marriage card if available
+            # play most expensive non marriage card if available
             if len(non_marriage_cards) > 0:
                 # Get move with highest rank available, of any suit
                 chosen_move = non_marriage_cards[0]
                 for index, move in enumerate(non_marriage_cards):
                     if move[0] is not None and move[0] % 5 <= chosen_move[0] % 5:
                         chosen_move = move
-            else: # play cheapest card available
+            else: # play most expensive card available
                 chosen_move = moves[0]
                 # Get move with highest rank available, of any suit
                 for index, move in enumerate(moves):
                     if move[0] is not None and move[0] % 5 <= chosen_move[0] % 5:
                         chosen_move = move
 
-        # play most expensive card in phase 2
+        # play most expensive card in phase 2. also marriages
         if state.get_phase() == 2:
             chosen_move = moves[0]
             # Get move with highest rank available, of any suit
