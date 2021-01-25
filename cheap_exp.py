@@ -33,7 +33,7 @@ class Bot:
 
         # play cheapest card in phase 1
         if state.get_phase() == 1:
-            # remove marriage in phase 1 - doesnt work right now, change later
+            # remove marriage in phase 1
             for move in moves:
                 if move[1] == None:
                     moves.remove(move)
