@@ -40,14 +40,14 @@ class Bot:
                 if move[1] == None:
                     moves.remove(move)
 
-            # Get move with lowest rank available, of any suit
+            # Get cheapest card available, of any suit
             for index, move in enumerate(moves):
                 if move[0] is not None and move[0] % 5 >= chosen_move[0] % 5:
                     chosen_move = move
 
         # play most expensive card in phase 2
         if state.get_phase() == 2:
-            # Get move with highest rank available, of any suit
+            # Get most expensive card, of any suit
             for index, move in enumerate(moves):
                 if move[0] is not None and move[0] % 5 <= chosen_move[0] % 5:
                     chosen_move = move
