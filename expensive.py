@@ -1,5 +1,6 @@
 """
-Description: expensive bot will always play the most expensive card available. 
+Description: 
+expensive bot will always play the most expensive card available. 
 It will also play marriages if possible.
 """
 
