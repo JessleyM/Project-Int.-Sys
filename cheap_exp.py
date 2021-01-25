@@ -1,8 +1,10 @@
 """
 DESCRIPTION:
-In the first phase, bot will always play the cheapest card.
-In the second phase, it will play the most expensive card available.
-
+Bot that tries to play suboptimal in phase 1 to spend the best cards in phase 2.
+Phase1; bot will always play the cheapest card possible. 
+Also, it won't do marriages.
+Phase2; it will play the most expensive card available
+and also marriages.
 """
 
 # Import the API objects
