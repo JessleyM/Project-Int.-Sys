@@ -1,5 +1,6 @@
 """
-Description: expensive bot will always play the most expensive card.
+Description: expensive bot will always play the most expensive card available. 
+It will also play marriages if possible.
 """
 
 # Import the API objects
@@ -28,7 +29,7 @@ class Bot:
         moves = state.moves()
         chosen_move = moves[0]
 
-        # Get move with highest rank available, of any suit
+        # Get most expensive card available, of any suit
         for index, move in enumerate(moves):
             if move[0] is not None and move[0] % 5 <= chosen_move[0] % 5:
                 chosen_move = move
